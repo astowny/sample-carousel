@@ -1,0 +1,123 @@
+<div class="carousel">
+  <div class="card carousel-slide">
+   <img src="https://cdn.website-editor.net/s/08c5644a531a4e259399b73a3bbd5b4b/dms3rep/multi/vigilan+-+images-08.png" alt="">
+   <div class="card__title">
+    Sécurité
+   </div>
+   <div class="card__text">
+    Au travers de notre SOC,
+    <br>
+    nous assurons la supervision de
+    <br>
+    vos alertes de sécurité mais nous assurons
+    <br>
+    également le support informatique de proximité.
+    <br>
+    Nos équipes Support et SOC sont associées pour
+    <br>
+    vous offrir le plus niveau de compétence sur l'ensemble
+    <br>
+    de vos problématiques informatiques.
+   </div>
+  </div>
+  <div class="card carousel-slide">
+   <img src="https://cdn.website-editor.net/s/08c5644a531a4e259399b73a3bbd5b4b/dms3rep/multi/vigilan+-+images-08.png" alt="">
+   <div class="card__title">
+    Intégration
+   </div>
+   <div class="card__text">
+    Nous installons,  configurons,
+    <br>
+    déployons et optimisons vos solutions de sécurité.
+    <br>
+    Nous pouvons également prendre en charge la globalité
+    <br>
+    de vos infrastructures au travers d'un réseau
+    <br>
+    de partenaires qualifiés.
+   </div>
+  </div>
+  <div class="card carousel-slide">
+   <img src="https://cdn.website-editor.net/s/08c5644a531a4e259399b73a3bbd5b4b/dms3rep/multi/vigilan+-+images-08.png" alt="">
+   <div class="card__title">
+    Audit
+   </div>
+   <div class="card__text">
+    Audit de sécurité.
+    <br>
+    Campagne de phishing, Pentest, audit de
+    <br>
+    configuration, audit de codes.
+    <br>
+    <br>
+    Option : services de BugBounty.
+   </div>
+  </div>
+  <div class="carousel-nav">
+   <div class="carousel-nav-bullets active">
+   </div>
+   <div class="carousel-nav-bullets">
+   </div>
+   <div class="carousel-nav-bullets">
+   </div>
+  </div>
+ </div>
+ <style>
+  .card {
+        background: #022752;
+        padding: 20px;
+        border-radius:25px;
+        color: #fff;
+        text-align:center;
+        font-size: 14px;
+        height:470px;
+    }
+    .card__title {
+        color:#E51834;
+        font-family: 'Urbanist';
+        font-weight:900;
+        font-size: 20px;
+    }
+    .card img {
+        width:clamp(100px, 50%, 300px);
+    }
+    /* carousel */
+    .carousel .carousel-slide {
+        display: none;
+    }
+    .carousel .carousel-slide:first-child {display:block;}
+    .carousel .carousel-nav {
+        display: flex;
+        justify-content: center;
+    }
+    .carousel .carousel-nav-bullets {
+        border-radius: 100%;
+        height:15px;
+        width:15px;
+        margin:5px;
+        background:#022752;
+        cursor:pointer;
+    }
+    .carousel .carousel-nav-bullets.active {
+        background: #E51834;
+    }
+ </style>
+ <script>
+  const bullets = jQuery('.carousel-nav-bullets');
+  const slides = jQuery('.carousel-slide');
+  let autoplay_index = 1;
+     bullets.click((event) => {
+         const index = jQuery(event.target).index();
+         bullets.removeClass('active');
+         jQuery(event.target).addClass('active');
+         slides.fadeOut(300).delay(300);
+         jQuery(slides[index]).fadeIn();
+     });
+  // autoplay
+    autoplay_timeout_id = setTimeout(() => {
+      autoplay_interval_id = setInterval(() => {
+          jQuery(bullets[autoplay_index]).click();
+          autoplay_index = (autoplay_index + 1) % 3 ;
+      }, 5000);
+    }, 5000);
+ </script>
